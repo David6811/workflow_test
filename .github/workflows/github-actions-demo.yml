@@ -11,3 +11,6 @@ jobs:
       - run: cd /home
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Print Environment Variables
+      - run: echo "My name is $(whoami) and my home directory is $HOME."
+
