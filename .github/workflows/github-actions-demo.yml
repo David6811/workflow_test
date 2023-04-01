@@ -9,5 +9,6 @@ jobs:
         uses: actions/checkout@v3
       - name: 项目打包
         run: "cd /root/HelloAIServer/Eureka && mvn -B package "
-      - run: ${{ github.action_path }}/runServer.sh
-        shell: bash
+      - name: 启动项目
+        run: "cd /root/HelloAIServer/Eureka/target && chmod +x restart.sh && ./restart.sh eureka-1.0-SNAPSHOT.jar"
+
