@@ -8,6 +8,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: 项目打包
-        run: mvn -B package
+        run: "cd /root/HelloAIServer/Eureka && mvn -B package "
       - run: ${{ github.action_path }}/runServer.sh
         shell: bash
